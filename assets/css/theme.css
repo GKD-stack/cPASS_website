@@ -804,3 +804,11 @@ div.a2a_full_footer {display:none;}
 	 }
  }
  
+.text-center {
+  text-align: center;
+}
+
+.lead {
+  max-width: 600px;
+  margin: 0 auto;
+}
