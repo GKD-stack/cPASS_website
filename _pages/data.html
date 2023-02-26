@@ -1,1 +1,91 @@
+---
+title: "Data"
+layout: default
+permalink: "/data.html"
+---
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Scrolling Menu and Search Bar Example</title>
+	<style>
+		/* Style for the scrolling menu */
+		.menu {
+			overflow-y: scroll;
+			height: 200px;
+			border: 1px solid #ccc;
+			padding: 5px;
+		}
+		/* Style for the search bar */
+		.search {
+			margin-top: 10px;
+			display: flex;
+			align-items: center;
+		}
+		.search label {
+			margin-right: 10px;
+		}
+		.search input[type="text"] {
+			flex: 1;
+			padding: 5px;
+			border: 1px solid #ccc;
+		}
+		.search button {
+			padding: 5px 10px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<h1>Scrolling Menu and Search Bar Example</h1>
+	<div class="menu">
+		<ul>
+			<li><a href="#">Item 1</a></li>
+			<li><a href="#">Item 2</a></li>
+			<li><a href="#">Item 3</a></li>
+			<li><a href="#">Item 4</a></li>
+			<li><a href="#">Item 5</a></li>
+			<li><a href="#">Item 6</a></li>
+			<li><a href="#">Item 7</a></li>
+			<li><a href="#">Item 8</a></li>
+			<li><a href="#">Item 9</a></li>
+			<li><a href="#">Item 10</a></li>
+			<li><a href="#">Item 11</a></li>
+			<li><a href="#">Item 12</a></li>
+			<li><a href="#">Item 13</a></li>
+			<li><a href="#">Item 14</a></li>
+			<li><a href="#">Item 15</a></li>
+			<li><a href="#">Item 16</a></li>
+			<li><a href="#">Item 17</a></li>
+			<li><a href="#">Item 18</a></li>
+			<li><a href="#">Item 19</a></li>
+			<li><a href="#">Item 20</a></li>
+		</ul>
+	</div>
+	<div class="search">
+		<label for="search-input">Search:</label>
+		<input type="text" id="search-input" placeholder="Type to search...">
+		<button type="button">Search</button>
+	</div>
+	<script>
+		const menu = document.querySelector('.menu ul');
+		const searchInput = document.querySelector('#search-input');
+		const searchButton = document.querySelector('.search button');
 
+		// Filter the menu items based on the search input
+		const filterMenuItems = () => {
+			const query = searchInput.value.toLowerCase();
+			const menuItems = menu.querySelectorAll('li');
+
+			menuItems.forEach(item => {
+				const link = item.querySelector('a');
+				const text = link.textContent.toLowerCase();
+				if (text.indexOf(query) > -1) {
+					item.style.display = '';
+				} else {
+					item.style.display = 'none';
+				}
+			});
+		
