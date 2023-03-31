@@ -41,15 +41,15 @@ permalink: "/crises.html"
 	}
 </style>
 
+
 <div class="search">
 	<label for="search-input">Search:</label>
 	<input type="text" id="search-input" placeholder="Type to search...">
-	<button type="button">Search</button>
+	<button type="button" id="all-crises-button">All Crises</button>
 </div>
 
-
 <h4 class="font-weight-bold spanborder text-center"><span>All Crises</span></h4>
-<div class="menu">
+<div class="menu" style="display: none;">
 	<ul>
 		<li><a href="./crisno_146.html">1954: Taiwan Strait I Crisis</a></li>
 		<li><a href="#">Item 2</a></li>
@@ -73,6 +73,15 @@ permalink: "/crises.html"
 		<li><a href="#">Item 20</a></li>
 	</ul>
 </div>
+
+<script>
+	const menu = document.querySelector('.menu');
+	const allCrisesButton = document.querySelector('#all-crises-button');
+
+	allCrisesButton.addEventListener('click', () => {
+		menu.style.display = menu.style.display === 'none' ? '' : 'none';
+	});
+</script>
 
 <script>
 	const menu = document.querySelector('.menu ul');
