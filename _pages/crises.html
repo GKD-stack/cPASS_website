@@ -83,31 +83,6 @@ permalink: "/crises.html"
 	});
 </script>
 
-<script>
-	const menu = document.querySelector('.menu ul');
-	const searchInput = document.querySelector('#search-input');
-	const searchButton = document.querySelector('.search button');
-
-	// Filter the menu items based on the search input
-	const filterMenuItems = () => {
-		const query = searchInput.value.toLowerCase();
-		const menuItems = menu.querySelectorAll('li');
-
-		menuItems.forEach(item => {
-			const link = item.querySelector('a');
-			const text = link.textContent.toLowerCase();
-			if (text.indexOf(query) > -1) {
-				item.style.display = '';
-			} else {
-				item.style.display = 'none';
-			}
-		});
-	};
-
-	searchButton.addEventListener('click', filterMenuItems);
-	searchInput.addEventListener('keyup', filterMenuItems);
-</script>
-
 	
   
 </div>
