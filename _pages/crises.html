@@ -57,7 +57,10 @@ permalink: "/crises.html"
       <label for="search-input">Search:</label>
       <input type="text" id="search-input" placeholder="Type to search...">
       <button type="button" id="search-button">Search</button>
-      <button type="button" id="all-crises-button" class="all-crises-button">All Crises</button>
+    </div>
+    
+    <div class="all-crises-button">
+      <button type="button" id="all-crises-button">All Crises</button>
     </div>
 
     <h4 class="font-weight-bold spanborder text-center"><span>All Crises</span></h4>
@@ -80,44 +83,8 @@ permalink: "/crises.html"
         <li><a href="#">Item 15</a></li>
         <li><a href="#">Item 16</a></li>
         <li><a href="#">Item 17</a></li>
-        <li><a href="#">Item 18</a></li>
-        <li><a href="#">Item 19</a></li>
-        <li><a href="#">Item 20</a></li>
       </ul>
-   
+    </div>
+  </div>
 </div>
-</div>
-<script>
-  const searchInput = document.querySelector('#search-input');
-  const searchButton = document.querySelector('#search-button');
-  const allCrisesButton = document.querySelector('#all-crises-button');
-  const menu = document.querySelector('.menu');
 
-  // show all crises when "All Crises" button is clicked
-  allCrisesButton.addEventListener('click', () => {
-    menu.style.display = 'block';
-    searchInput.value = '';
-  });
-
-  // search for crises when "Search" button is clicked
-  searchButton.addEventListener('click', () => {
-    const searchTerm = searchInput.value.toLowerCase();
-    const crisisList = menu.querySelectorAll('li');
-
-    crisisList.forEach((crisis) => {
-      const title = crisis.textContent.toLowerCase();
-      if (title.includes(searchTerm)) {
-        crisis.style.display = 'block';
-      } else {
-        crisis.style.display = 'none';
-      }
-    });
-  });
-
-  // show all crises when the search input is cleared
-  searchInput.addEventListener('input', () => {
-    if (searchInput.value === '') {
-      menu.style.display = 'block';
-    }
-  });
-</script>
