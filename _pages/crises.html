@@ -1,107 +1,105 @@
+---
 title: "Crises"
 layout: default
 permalink: "/crises.html"
+---
 
 <div class="container">
-    <h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
-    <div class="container-fluid">
-        
-        <style>
-            /* Style for the scrolling menu */
-            .menu {
-                overflow-y: scroll;
-                height: calc(100vh - 100px);
-                border: 1px solid #ccc;
-                padding: 5px;
-            }
-            /* Style for the search bar */
-            .search {
-                display: flex;
-                align-items: center;
-                background-color: #f2f2f2;
-                height: 50px;
-                padding: 0 20px;
-            }
-            .search label {
-                margin-right: 10px;
-            }
-            .search input[type="text"] {
-                flex: 1;
-                padding: 5px;
-                border: 1px solid #ccc;
-            }
-            .search button {
-                padding: 5px 10px;
-                background-color: #4CAF50;
-                color: #fff;
-                border: none;
-                cursor: pointer;
-            }
-        </style>
+<h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
+<div class="container-fluid">
+	
+<style>
+/* Style for the scrolling menu */
+	.menu {
+		overflow-y: scroll;
+		height: calc(100vh - 100px);
+		border: 1px solid #ccc;
+		padding: 5px;
+	}
+	/* Style for the search bar */
+	.search {
+		display: flex;
+		align-items: center;
+		background-color: #f2f2f2;
+		height: 50px;
+		padding: 0 20px;
+	}
+	.search label {
+		margin-right: 10px;
+	}
+	.search input[type="text"] {
+		flex: 1;
+		padding: 5px;
+		border: 1px solid #ccc;
+	}
+	.search button {
+		padding: 5px 10px;
+		background-color: #4CAF50;
+		color: #fff;
+		border: none;
+		cursor: pointer;
+	}
+</style>
 
-        <div class="search">
-            <label for="search-input">Search:</label>
-            <input type="text" id="search-input" placeholder="Type to search...">
-            <button type="button">Search</button>
-        </div>
+<div class="search">
+	<label for="search-input">Search:</label>
+	<input type="text" id="search-input" placeholder="Type to search...">
+	<button type="button">Search</button>
+</div>
 
-        <button id="see-all-crises">See all crises</button>
 
-        <h4 class="font-weight-bold spanborder text-center"><span>All Crises</span></h4>
-        <div class="menu" style="display: none;">
-            <ul>
-                <li><a href="./crisno_146.html">1954: Taiwan Strait I Crisis</a></li>
-                <li><a href="#">Item 2</a></li>
-                <li><a href="#">Item 3</a></li>
-                <li><a href="#">Item 4</a></li>
-                <li><a href="#">Item 5</a></li>
-                <li><a href="#">Item 6</a></li>
-                <li><a href="#">Item 7</a></li>
-                <li><a href="#">Item 8</a></li>
-                <li><a href="#">Item 9</a></li>
-                <li><a href="#">Item 10</a></li>
-                <li><a href="#">Item 11</a></li>
-                <li><a href="#">Item 12</a></li>
-                <li><a href="#">Item 13</a></li>
-                <li><a href="#">Item 14</a></li>
-                <li><a href="#">Item 15</a></li>
-                <li><a href="#">Item 16</a></li>
-                <li><a href="#">Item 17</a></li>
-                <li><a href="#">Item 18</a></li>
-                <li><a href="#">Item 19</a></li>
-                <li><a href="#">Item 20</a></li>
-            </ul>
-        </div>
-        
-    </div>
+<h4 class="font-weight-bold spanborder text-center"><span>All Crises</span></h4>
+<div class="menu">
+	<ul>
+		<li><a href="./crisno_146.html">1954: Taiwan Strait I Crisis</a></li>
+		<li><a href="#">Item 2</a></li>
+		<li><a href="#">Item 3</a></li>
+		<li><a href="#">Item 4</a></li>
+		<li><a href="#">Item 5</a></li>
+		<li><a href="#">Item 6</a></li>
+		<li><a href="#">Item 7</a></li>
+		<li><a href="#">Item 8</a></li>
+		<li><a href="#">Item 9</a></li>
+		<li><a href="#">Item 10</a></li>
+		<li><a href="#">Item 11</a></li>
+		<li><a href="#">Item 12</a></li>
+		<li><a href="#">Item 13</a></li>
+		<li><a href="#">Item 14</a></li>
+		<li><a href="#">Item 15</a></li>
+		<li><a href="#">Item 16</a></li>
+		<li><a href="#">Item 17</a></li>
+		<li><a href="#">Item 18</a></li>
+		<li><a href="#">Item 19</a></li>
+		<li><a href="#">Item 20</a></li>
+	</ul>
 </div>
 
 <script>
-    // Get the button and menu elements
-    const button = document.getElementById("see-all-crises");
-    const menu = document.querySelector(".menu");
+	const menu = document.querySelector('.menu ul');
+	const searchInput = document.querySelector('#search-input');
+	const searchButton = document.querySelector('.search button');
 
-    // Add a click event listener to the button
-    button.addEventListener("click", function() {
-        // Toggle the display of the menu
-        menu.style.display = menu.style.display === "none" ? "block" : "none";
-    });
+	// Filter the menu items based on the search input
+	const filterMenuItems = () => {
+		const query = searchInput.value.toLowerCase();
+		const menuItems = menu.querySelectorAll('li');
 
-    // Get the input element and add a keyup event listener
-    const input = document.getElementById("search-input");
-    input.addEventListener("keyup", function() {
-        // Get the filter value and convert to lowercase
-        const filter = input.value.toLowerCase();
-        // Get all the li elements in the menu
-        const lis = menu.querySelectorAll("li");
-        // Loop through the li elements and hide/show based on the filter value
-        for (let i = 0; i < lis.length; i++) {
-            const text = lis[i].textContent.toLowerCase();
-            if (text.indexOf(filter) > -1) {
-                lis[i].style.display = "";
-            } else {
-                lis[i].style.display = "none";
-            }
-        }
-    });
+		menuItems.forEach(item => {
+			const link = item.querySelector('a');
+			const text = link.textContent.toLowerCase();
+			if (text.indexOf(query) > -1) {
+				item.style.display = '';
+			} else {
+				item.style.display = 'none';
+			}
+		});
+	};
+
+	searchButton.addEventListener('click', filterMenuItems);
+	searchInput.addEventListener('keyup', filterMenuItems);
 </script>
+
+	
+  
+</div>
+</div>
