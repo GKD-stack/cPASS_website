@@ -1,8 +1,6 @@
----
 title: "Crises"
 layout: default
 permalink: "/crises.html"
----
 
 <div class="container">
     <h4 class="font-weight-bold spanborder"><span>{{page.title}}</span></h4>
@@ -78,4 +76,32 @@ permalink: "/crises.html"
     </div>
 </div>
 
-	
+<script>
+    // Get the button and menu elements
+    const button = document.getElementById("see-all-crises");
+    const menu = document.querySelector(".menu");
+
+    // Add a click event listener to the button
+    button.addEventListener("click", function() {
+        // Toggle the display of the menu
+        menu.style.display = menu.style.display === "none" ? "block" : "none";
+    });
+
+    // Get the input element and add a keyup event listener
+    const input = document.getElementById("search-input");
+    input.addEventListener("keyup", function() {
+        // Get the filter value and convert to lowercase
+        const filter = input.value.toLowerCase();
+        // Get all the li elements in the menu
+        const lis = menu.querySelectorAll("li");
+        // Loop through the li elements and hide/show based on the filter value
+        for (let i = 0; i < lis.length; i++) {
+            const text = lis[i].textContent.toLowerCase();
+            if (text.indexOf(filter) > -1) {
+                lis[i].style.display = "";
+            } else {
+                lis[i].style.display = "none";
+            }
+        }
+    });
+</script>
