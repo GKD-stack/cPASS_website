@@ -88,3 +88,27 @@ permalink: "/crises.html"
   </div>
 </div>
 
+<script>
+  const allCrisesBtn = document.getElementById("all-crises-button");
+  const crisesMenu = document.querySelector(".menu");
+  
+  allCrisesBtn.addEventListener("click", () => {
+    crisesMenu.style.display = "block";
+  });
+  
+  const searchBtn = document.getElementById("search-button");
+  const searchInput = document.getElementById("search-input");
+  const crisisItems = crisesMenu.querySelectorAll("li");
+  
+  searchBtn.addEventListener("click", () => {
+    const searchText = searchInput.value.toLowerCase();
+    crisisItems.forEach((item) => {
+      const crisisName = item.textContent.toLowerCase();
+      if (crisisName.includes(searchText)) {
+        item.style.display = "block";
+      } else {
+        item.style.display = "none";
+      }
+    });
+  });
+</script>
