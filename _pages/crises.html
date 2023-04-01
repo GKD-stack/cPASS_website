@@ -112,7 +112,11 @@ permalink: "/crises.html"
   const crisesMenu = document.querySelector(".menu");
   
   allCrisesBtn.addEventListener("click", () => {
-    crisesMenu.style.display = "block";
+    if (crisesMenu.style.display === "block") {
+      crisesMenu.style.display = "none";
+    } else {
+      crisesMenu.style.display = "block";
+    }
   });
   
   const searchBtn = document.getElementById("search-button");
@@ -131,3 +135,4 @@ permalink: "/crises.html"
     });
   });
 </script>
+
